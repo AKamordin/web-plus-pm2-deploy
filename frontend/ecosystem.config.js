@@ -17,7 +17,6 @@ const {
 module.exports = {
   apps: [{
     name: 'mesto-frontend',
-    script: './build/index.html',
   }],
 
   deploy: {
@@ -27,8 +26,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
-      'pre-deploy-local': `eval $(ssh-agent -s) && ssh-add ~/.ssh/id_ed25519`,
-      'post-deploy': 'cd frontend && npm i && npm run build',
+      'post-deploy': `cd ${DEPLOY_PATH}/source/frontend npm i && npm run build`,
     },
   },
 };
