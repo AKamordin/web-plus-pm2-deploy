@@ -139,6 +139,6 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('https://api.akamodin.students.nomoredomains.work:3000');
+  const api = new Api('https://api.akamodin.students.nomoredomains.work');
 
   export default api;
